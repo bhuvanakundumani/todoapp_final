@@ -1,0 +1,28 @@
+
+{% extends 'base.html' %}
+
+{% load bootstrap %}
+
+{% block title %} New todo {% endblock %}
+
+{% block body %}
+
+
+<h1> To Do List</h1>
+
+<div class="jumbotron">
+
+<form method="post">
+    {% csrf_token %}
+
+    {{ form|bootstrap}}
+    <button type="submit"> Save </button>
+
+
+
+
+</form>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+
+
+
+{% extends 'base.html' %}
+{% block title %} Todolist {% endblock %}
+
+{% block body %}
+
+
+
+<h1> ToDo List</h1>
+
+{% for list in todolist %}
+
+<br>
+
+<ul class="list-group">
+
+
+    <li class="list-group-item"> {{ list.title  }} </li>
+
+
+    <li class="list-group-item">{{ list.content}} &nbsp   &nbsp    &nbsp   &nbsp Due date -  {{ list.due_date}} </li>
+
+</ul>
+
+
+    <p class ="text-right">  <a href="{%  url 'todolist_edit' list.id  %}" class="'btn btn-info"> Edit</a> &nbsp &nbsp
+        <a href="{%  url 'todolist_delete' list.id  %}" class="'btn btn-danger"> Delete</a></p>
+
+
+
+
+<br>
+
+
+
+
+{% endfor %}
+
+
+<p> <a href="{%  url 'todolist_new' %}" class="'btn btn-primary"> New Todo</a> </p>
+
+
+{% endblock %}
+
+
+
